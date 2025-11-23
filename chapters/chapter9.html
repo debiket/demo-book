@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      РОЗДІЛ 8 СТВОРЕННЯ ПЕРЕЛІКУ ЕЛЕМЕНТІВ (BILL OF MATERIALS), ДРУКУВАННЯ
+      ДОКУМЕНТАЦІЇ
+    </title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="book-container">
+      <section id="content-page">
+        <div class="sidebar-overlay"></div>
+        <button id="toggle-sidebar" class="btn-secondary">☰</button>
+
+        <aside class="sidebar">
+          <h2>Зміст</h2>
+          <div id="menu-placeholder"></div>
+        </aside>
+
+        <main class="content">
+          <article>
+            <h2 style="text-align: center">
+              РОЗДІЛ 8 СТВОРЕННЯ ПЕРЕЛІКУ ЕЛЕМЕНТІВ (BILL OF MATERIALS),
+              ДРУКУВАННЯ ДОКУМЕНТАЦІЇ
+            </h2>
+            <h3 style="text-indent: 2em">8.1 Формування документації</h3>
+            <p style="text-indent: 2em">
+              Результатом розробки принципової схеми, в загальному випадку
+              повинні бути три пункти:
+            </p>
+            <ul style="margin-left: 50px">
+              <li>інформація для розробки друкованої плати;</li>
+              <li>креслення схеми;</li>
+              <li>перелік елементів.</li>
+            </ul>
+            <p style="text-indent: 2em">
+              Інформація для плати закладена у самій схемі, і буде передана у
+              файл плати на одному з перших етапів проєктування плати. Два інших
+              пункти можна отримати у Altium Designer.
+            </p>
+            <img
+              src="/demo-book/photo/8.1.jpg"
+              alt="Структура вікна налаштування звіту ВОМ"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.1 – Структура вікна налаштування звіту ВОМ
+            </p>
+            <img
+              src="/demo-book/photo/8.2.jpg"
+              alt="Структура файлу Output Job File"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.2 – Структура файлу Output Job File
+            </p>
+            <h3 style="text-indent: 2em">
+              8.2 Практична робота зі створення документації
+            </h3>
+            <p style="font-style: italic; text-indent: 2em">
+              8.2.1 Створення переліку елементів (Bill of Materials)
+            </p>
+            <p style="text-indent: 2em">
+              Спочатку потрібно відкрити файл проєкту Demo.PrjPcb. Слід
+              відзначити, що для створення переліку елементів потрібно мати
+              правильно оформлені бібліотеки компонентів. У кожного компонента
+              повинна бути введена інформація, яка описує всі його параметри,
+              необхідні для створення переліку елементів. Щоб перевірити чи
+              правильно заповнені параметри компонентів одразу для всього
+              проєкту можна використати команду Tools -> Parameter Manager, у
+              вікні, що з'явилося потрібно обрати параметри згідно з рис. 8.3.
+            </p>
+            <img
+              src="/demo-book/photo/8.3.jpg"
+              alt="Налаштування фільтру атрибутів"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.3 – Налаштування фільтру атрибутів
+            </p>
+            <p style="text-indent: 2em">
+              Потім з'явиться таблиця з параметрами компонентів, в якій можна
+              зручно редагувати параметри одразу декількох компонентів
+              (рис.8.4). Також потрібно перевірити поля основного надпису
+              документа за допомогою команди Design -> Document Options у
+              вкладці Parameters.
+            </p>
+            <p style="text-indent: 2em">
+              Далі додамо файл вихідних даних для обробки в проєкт командою File
+              -> New -> Output Job File або з контекстного меню проєкту у
+              вкладці Projects, викликаного натисканням правої клавіші миші на
+              проєкті і збережемо його в папці проєкту.
+            </p>
+            <p style="text-indent: 2em">
+              Додаємо вихідний документ Report Outputs.
+            </p>
+            <img
+              src="/demo-book/photo/8.4.jpg"
+              alt="Додавання переліку елементів для проєкту"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.4 – Додавання переліку елементів для проєкту
+            </p>
+            <p style="text-indent: 2em">
+              Після створення викликаємо вікно налаштування звіту BOM (рис.8.5).
+              Для цього натискаємо правою клавішею миші на цьому документі та
+              обираємо пункт Configure. У вікні налаштування обираємо потрібні
+              параметри:
+            </p>
+            <ul style="margin-left: 50px">
+              <li>Designator;</li>
+              <li>Manufacturer;</li>
+              <li>ManufacturerPartNumber;</li>
+              <li>Power / Voltage;</li>
+              <li>Quantity;</li>
+              <li>Rem;</li>
+              <li>TKE;</li>
+              <li>Tolerance;</li>
+              <li>Value.</li>
+            </ul>
+            <p style="text-indent: 2em">
+              По параметру Designator будемо проводити групування компонентів.
+              Для цього перетягуємо потрібний параметр у вікно параметрів для
+              групування. Також підключаємо шаблон Шаблон BOM_Родник.xls.
+            </p>
+            <img
+              src="/demo-book/photo/8.5.jpg"
+              alt="Налаштування звіту BOM"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.5 – Налаштування звіту BOM
+            </p>
+            <p style="text-indent: 2em">
+              Завершивши налаштування, виберемо контейнер для виводу Folder
+              Structure та вказуємо, що звіт буде формуватися у папку (рис.8.6).
+              Задаємо назву файлу та місце, де він буде збережений натисканням
+              правої клавіші миші на потрібному контейнері виводу та обравши
+              пункт Properties.
+            </p>
+            <p style="text-indent: 2em">
+              Для того, щоб перелік елементів зберігався разом з проєктом у
+              піддиректорії ВОМ потрібно натиснути на Release Managed і обрати
+              Manually Managed (рис.8.7).
+            </p>
+            <p style="text-indent: 2em">
+              Для генерації переліку елементів натискаємо на клавішу Generate
+              Content у вікні Folder Structure та зберігаємо отримані звіти.
+            </p>
+            <p style="font-style: italic; text-indent: 2em">
+              8.2.2 Друкування принципової схеми
+            </p>
+            <p style="text-indent: 2em">
+              Відкриємо файл проєкту RCU.PrjPcb та одразу додамо файл вихідних
+              даних для обробки в проєкт командою File -> New -> Output Job File
+              або з контекстного меню проєкту у вкладці Projects, викликаного
+              натисканням правої клавіші миші на проєкті і збережемо його в
+              папці проєкту. У розділі Documentation Outputs натискаємо на
+              клавішу Add New Document і обираємо вихідний документ Schematic
+              Prints для всіх схем проєкту (рис.8.8).
+            </p>
+            <img
+              src="/demo-book/photo/8.6.jpg"
+              alt="Вибір потрібного контейнеру"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.6 – Вибір потрібного контейнеру
+            </p>
+            <img
+              src="/demo-book/photo/8.7.jpg"
+              alt="Вибір місця збереження файлу"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.7 – Вибір місця збереження файлу
+            </p>
+            <img
+              src="/demo-book/photo/8.8.jpg"
+              alt="Додавання вихідного документу"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.8 – Додавання вихідного документу
+            </p>
+            <p style="text-indent: 2em">
+              Далі вибераємо контейнер для виводу PDF та вказуємо, що звіт буде
+              формуватися у PDF. Задаємо назву файлу та місце, де він буде
+              збережений у властивостях контейнера, натиснувши на нього правою
+              клавішею миші та обравши пункт Properties. Налаштовуємо параметри
+              вихідного документу схеми згідно з рис. 8.9. Також налаштовуємо
+              параметри друку, обравши пункт Page Setup. У вікні, що з'явилося
+              обираємо розмір сторінки – A3, орієнтація сторінки – портретна,
+              режим відображення кольорів – монохроматичний (чорно-білий).
+              Натискаємо на клавішу Generate Content у вікні New PDF та
+              зберігаємо отриману схему.
+            </p>
+            <img
+              src="/demo-book/photo/8.9.jpg"
+              alt="Параметри документа схеми"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.9 – Параметри документа схеми
+            </p>
+            <img
+              src="/demo-book/photo/8.10.jpg"
+              alt="Параметри друкування"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.10 – Параметри друкування
+            </p>
+            <p style="font-style: italic; text-indent: 2em">
+              8.2.3 Друк документації на друковану плату
+            </p>
+            <p style="text-indent: 2em">
+              Відкриємо файл проєкту DT01.PrjPcb, який знаходиться у папці
+              Examples (…\Examples\Developer Tool - DT01) та одразу додамо файл
+              вихідних даних для обробки в проєкт командою File -> New -> Output
+              Job File або з контекстного меню проєкту у вкладці Projects,
+              викликаного натисканням правої клавіші миші на проєкті і збережемо
+              його в папці проєкту.
+            </p>
+            <p style="text-indent: 2em">
+              У розділі Documentation Outputs натискаємо на клавішу Add New
+              Document і обираємо вихідний документ PCB Prints.
+            </p>
+            <p style="text-indent: 2em">
+              Налаштовуємо параметри вихідного документу друкованої плати
+              (рис.8.11), видаляємо зайві та додаємо необхідні шари. Потім
+              обираємо власну область для друкування Specific Area та натискаємо
+              клавішу Define і задаємо потрібну область згідно з рис. 8.12.
+            </p>
+            <p style="text-indent: 2em">
+              Виберемо контейнер для виводу PDF та вказуємо, що звіт буде
+              формуватися у PDF. Задаємо назву файлу та місце, де він буде
+              збережений у властивостях контейнера, натиснувши на нього правою
+              клавішею миші та обравши пункт Properties. Натискаємо на клавішу
+              Generate Content у вікні New PDF та зберігаємо отриману схему.
+            </p>
+            <img
+              src="/demo-book/photo/8.11.jpg"
+              alt="Налаштування вихідного документу"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.11 – Налаштування вихідного документу
+            </p>
+            <img
+              src="/demo-book/photo/8.12.jpg"
+              alt="Вибір області для друкування"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 8.12 – Вибір області для друкування
+            </p>
+          </article>
+        </main>
+      </section>
+    </div>
+    <script>
+      fetch("menu.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-placeholder").innerHTML = data;
+          // Додаємо активний клас для поточної сторінки
+          const currentPage = document.querySelector('a[href="chapter3.html"]');
+          if (currentPage) currentPage.classList.add("active");
+        });
+    </script>
+    <script type="module" src="../js/chapter.js"></script>
+  </body>
+</html>

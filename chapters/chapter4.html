@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>РОЗДІЛ 3 СТВОРЕННЯ ЕЛЕКТРИЧНОЇ СХЕМИ</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="book-container">
+      <section id="content-page">
+        <div class="sidebar-overlay"></div>
+        <button id="toggle-sidebar" class="btn-secondary">☰</button>
+
+        <aside class="sidebar">
+          <h2>Зміст</h2>
+          <div id="menu-placeholder"></div>
+        </aside>
+
+        <main class="content">
+          <article>
+            <h2 style="text-align: center">
+              РОЗДІЛ 3 СТВОРЕННЯ ЕЛЕКТРИЧНОЇ СХЕМИ
+            </h2>
+            <p style="text-indent: 2em">
+              Розглянемо створення файлу електричної схеми у складі проекту. Для
+              цього виконаємо команду File > New > Project > PCB Project, після
+              чого відразу його збережемо File > Save Project. Також важливо
+              пам'ятати, що файли проєкту можуть розміщуватися в пам'яті в
+              різних місцях незважаючи на те, що в Altium (див. структуру
+              проєкту у вкладці Projects) вони будуть відображатися так, ніби
+              вони знаходяться в рамках одного проєкту. Тому, необхідно
+              намагатися зберігати всі файли проєкту в одній директорії
+              фізичного диска.
+            </p>
+            <p style="text-indent: 2em">
+              Далі, додамо файл електричної схеми в проєкт командою File > New >
+              Schematic або з контекстного меню проєкту у вкладці Projects
+              (рис.3.1), викликаного натисканням правої клавіші миші на проєкті
+              і збережемо його в папці проєкту.
+            </p>
+            <p style="text-indent: 2em">
+              Тепер, необхідно підключити необхідний шаблон для аркуша схеми,
+              викликавши команду Design > General Templates > Choose Another
+              File і вибравши файл A4_1_portrait_ru.SchDot в папці Templates. У
+              діалоговому вікні, що відкриється, запитується:
+            </p>
+            <p style="text-indent: 2em">
+              а) До яких документів застосувати цей шаблон:
+            </p>
+
+            <ul style="margin-left: 100px">
+              <li>
+                <strong>Just This Document</strong> — тільки до поточного
+                документу;
+              </li>
+              <li>
+                <strong>All schematic documents in the current project</strong>
+                — до всіх схем поточного проекту;
+              </li>
+              <li>
+                <strong>All open schematic documents</strong> — до всіх
+                відкритих схем.
+              </li>
+            </ul>
+
+            <p style="text-indent: 2em">
+              б) Що робити із його параметрами (спеціальними полями, що
+              володіють властивостями автозаповнення):
+            </p>
+
+            <ul style="margin-left: 100px">
+              <li>
+                <strong>Do not update any parameters</strong> — не оновлювати
+                параметри;
+              </li>
+              <li>
+                <strong
+                  >Add new parameters that exist in the template only</strong
+                >
+                — додати нові параметри, не змінюючи значення і положення
+                існуючих;
+              </li>
+              <li>
+                <strong>Replace all matching parameters</strong> — оновити всі
+                параметри.
+              </li>
+            </ul>
+            <img
+              src="/demo-book/photo/3.1.jpg"
+              alt="Додавання файлу схеми у проєкт"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 3.1 – Додавання файлу схеми у проєкт
+            </p>
+            <p style="text-indent: 2em">
+              Значення в цьому вікні необхідно встановити відповідно до рис.
+              3.2. Щоб створити схему необхідно використовувати бібліотеки
+              компонентів. У Altium можна використовувати зовнішні і внутрішні
+              бібліотеки.
+            </p>
+            <p style="text-indent: 2em">
+              Підключивши шаблон, заповнимо необхідні поля основного надпису.
+              Для цього відкриємо вікно Design > Document Options і у вкладці
+              Parameters (рис.3.3) для параметра Author, як значення вкажемо
+              своє прізвище. Також вкажемо одиниці виміру – міліметри у вкладці
+              Units.
+            </p>
+            <img
+              src="/demo-book/photo/3.2.jpg"
+              alt="Підключення шаблону"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">Рисунок 3.2 – Підключення шаблону</p>
+            <img
+              src="/demo-book/photo/3.3.jpg"
+              alt="Параметри схеми"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">Рисунок 3.3 – Параметри схеми</p>
+            <p style="text-indent: 2em">
+              Відкриємо панель Libraries (рис.3.4), де натисканням клавіші
+              Libraries відкриємо вікно підключення бібліотек, що має 3 вкладки:
+              Project – бібліотеки проєкту (внутрішні бібліотеки); Installed –
+              встановлені бібліотеки (зовнішні бібліотеки); Search Path – шлях
+              для пошуку по бібліотеках (рис.3.5). Для зручності видалимо всі
+              підключені бібліотеки у вкладці Installed за допомогою клавіші
+              Remove, після чого встановимо потрібну зовнішню бібліотеку,
+              натиснувши клавішу Install і вибравши файл RCU_source.IntLib.
+              Потім, додамо в проєкт бібліотеку УПП(.SchLib), створену в розділі
+              2 за допомогою команди Project > Add existing to Project.
+            </p>
+            <p style="text-indent: 2em">
+              Використовуючи ці бібліотеки, зберемо схему відповідно до схеми на
+              рис. 3.6, попередньо встановивши крок сітки 2.5mm. За допомогою
+              команди Place можна почати розміщення обраного компонента, а
+              клавішею SPACE повернути його.
+            </p>
+            <p style="text-indent: 2em">
+              Щоб малювати з'єднання (створювати електричні кола) необхідно
+              використовувати спеціальну команду Place > Wire. Перемикання між
+              режимами малювання з'єднання здійснюється клавішами SHIFT + SPACE.
+              Якщо в режимі малювання навести курсор на електричне закінчення,
+              то діагональний хрестик стане червоним, це говорить про те, що
+              працює прив'язка до даного закінчення. Символи землі розміщуються
+              командою Place > Power Port. (поле Style, вікна властивостей
+              символу, повинне мати значення Power Ground).
+            </p>
+            <p style="text-indent: 2em">
+              Зібравши схему, пронумеруємо позиційні позначення елементів схеми
+              (рис.3.7), використовуючи команду автоматичної нумерації Tools >
+              Annotate Schematics Quietly.
+            </p>
+            <p style="text-indent: 2em">
+              Останнім етапом створення схеми є її перевірка на помилки
+              (рис.3.8), яка викликається з підменю Project > Compile PCB
+              Project (або з контекстного меню проєкту). При наявності помилок
+              відкриється вікно з їх описом.
+            </p>
+            <img
+              src="/demo-book/photo/3.4.jpg"
+              alt="Панель Libraries"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">Рисунок 3.4 – Панель Libraries</p>
+            <img
+              src="/demo-book/photo/3.5.jpg"
+              alt="Підключення бібліотек"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 3.5 – Підключення бібліотек
+            </p>
+            <img
+              src="/demo-book/photo/3.6.jpg"
+              alt="Електрична схема"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">Рисунок 3.6 – Електрична схема</p>
+            <img
+              src="/demo-book/photo/3.7.jpg"
+              alt="Схема з позиційними позначеннями"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">
+              Рисунок 3.7 – Схема з позиційними позначеннями
+            </p>
+            <img
+              src="/demo-book/photo/3.8.jpg"
+              alt="Компіляція проєкту"
+              style="display: block; margin: 0 auto"
+            />
+            <p style="text-align: center">Рисунок 3.8 – Компіляція проєкту</p>
+          </article>
+        </main>
+      </section>
+    </div>
+    <script>
+      fetch("menu.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-placeholder").innerHTML = data;
+          // Додаємо активний клас для поточної сторінки
+          const currentPage = document.querySelector('a[href="chapter3.html"]');
+          if (currentPage) currentPage.classList.add("active");
+        });
+    </script>
+    <script type="module" src="../js/chapter.js"></script>
+  </body>
+</html>
